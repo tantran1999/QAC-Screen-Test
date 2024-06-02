@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qac-screen-test-api
+spec:
+  selector:
+    matchLabels:
+      app: qac-screen-test-api
+  template:
+    metadata:
+      labels:
+        app: qac-screen-test-api
+    spec:
+      containers:
+      - name: qac-screen-test-api
+        image: <image repository> # Change that
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        ports:
+        - containerPort: 8080

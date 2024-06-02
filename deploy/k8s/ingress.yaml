@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qac-screen-test-api
+  labels:
+    name: qac-screen-test-api
+spec:
+  ingressClassName: nginx # or any you have implemented
+  rules:
+  - host: qac-screen-test-api.local
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: qac-screen-test-api
+            port: 
+              number: 8080

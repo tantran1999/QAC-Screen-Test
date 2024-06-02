@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: qac-screen-test-api
+spec:
+  selector:
+    app: qac-screen-test-api
+  ports:
+  - port: 8080
+    targetPort: 8080
+  type: ClusterIP # Change to NodePort (it good for local) or LoadBalancer (cloud only or you must have complicated setup on local to use it)
